@@ -1,0 +1,24 @@
+<html>
+
+	<head>
+	
+	</head>
+
+<body>
+		<input id = "number" Type = "text" placeholder = " Enter a Number ">
+		<button onclick = "Calcsqr()">Calculate</button>
+	<div id = "results"> </div>
+</body>
+
+	<script>
+		function calcSqr() {
+		var number = doc.getElementById("number");
+		var results = document.getElementById("results");
+		var square = Math.pow(parseFloat(number.value),2);
+		results.innerHTML = "The square is " + square;
+		}
+    </script>
+	
+</body>
+
+</html>

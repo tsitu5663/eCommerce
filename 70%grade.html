@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<title> Tobey's Pawn Shop </title>
+		<style>
+			img {width; 300px;
+				 }
+			input {width:50px}
+		</style>
+        <script>
+		function calculate(){
+			var price1 = parseFloat(document.getElementById("quantity1").value);
+			var price2 = parseFloat(document.getElementById("quantity2").value);
+			var price3 = parseFloat(document.getElementById("quantity3").value);
+			var quantity = (price1+price2+price3);
+			var subtotal = (price1 * 250) + (price2 * 100) + (price3 * 150);
+			var tax = subtotal*0.0875;
+			var shipping = "";
+				if (subtotal<100){
+					shipping += 25
+					}
+				else if (subtotal < 200){
+					shipping += 10
+					}
+				else{
+					shipping += 0
+					}
+			var total = (subtotal + tax + shipping);
+			var wholesale = (price1 * 200) + (price2 * 75) + (price3 * 125);
+			var profit = (subtotal - wholesale);
+			output.innerHTML = "The Amount of Items Sold is: " + quantity + "<br>" + "The Subtotal is: $" + subtotal + "<br>" + "The Tax is: $" + tax + "<br>" + "The Shipping Cost is: $" + shipping + "<br>" + "The Total is: $" + total + "<br>" + "The Wholesale price is: $" + wholesale + "<br>" + "The Profit is: $" + profit + "<br>";
+		}
+
+		</script>
+	</head>	
+	</body>
+		<center><div id = "output"> Sale Details </div></center>
+		<div>
+			<h1> Computer </h1>
+			<img src="Texas.jpg"> <br>
+			<span> $250 </span>
+			<p> Awesone Gaming Pc... It wont last long! </p>
+			Quantity You Would Like:<input type="text" id="quantity1" value=0>
+			<button onclick="calculate()" >Add To Cart</button>
+			
+			<h2>  Rice Cooker</h2>
+			<img src="rice.jpg"> <br>
+			<span> $100 </span>
+			<p> Cooks 60 seconds rice IN 58 SECONDS!!! </p>
+			Quantity You Would Like:<input type="text" id="quantity2" value=0>
+			<button onclick="calculate()" >Add To Cart</button>
+			
+			<h3>  Awesome Trex Costume!</h3>
+			<img src="DinoC.jpg"> <br>
+			<span> $150 </span>
+			<p> Scare Your kids, eat awesomely, be kewl, Be A Dinosaur! </p>
+			Quantity You Would Like:<input type="text" id="quantity3" value=0>
+			<button onclick="calculate()" >Add To Cart</button>
+		</div>
+		
+	</body>
+</html>
